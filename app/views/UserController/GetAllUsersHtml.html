@@ -1,0 +1,32 @@
+{{set . "title" "Hello Users"}}
+{{template "header.html" .}}
+
+
+{{range .users}}
+<style>
+  table, th, td {
+    border: 1px solid rgb(0, 0, 0);
+    border-collapse: collapse;
+  }
+</style>
+
+<table style="width:100%">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Address</th>
+    <th>Email</th>
+  </tr>
+  <tr>
+    <td>{{.ID}}</td> 
+    <td>{{.Name}}</td>
+    <td>{{.Age}}</td>
+    <td>{{.Address}}</td>
+    <td>{{.Email}}</td>
+  </tr>
+</table>
+{{end}}
+<a href="/">Back to form</a>
+
+{{template "footer.html" .}}
